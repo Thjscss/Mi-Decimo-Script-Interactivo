@@ -1,0 +1,206 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+/* Sombra de texto compartida por títulos, textos de producto y nav */
+/* Centrado compartido por títulos y textos de producto */
+h1, h2, h3, h4,
+.textimg {
+  text-align: center;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* ====== GENERALES ====== */
+body {
+  background-color: #e2b5b5;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+a,
+.navbar-brand {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+li {
+  list-style-type: none;
+}
+
+.bordes {
+  border-radius: 3rem;
+  background-color: #fff;
+}
+
+/* ====== NAV ====== */
+.navbar {
+  /* background-image: url(../img/banner1.jpg); */
+  background-color: #1e1e1e;
+  background-position: center;
+  background-size: cover;
+  height: 60px;
+  font-size: 1.2rem;
+}
+
+/* ====== PRODUCTOS ====== */
+.textimg {
+  color: rgb(228, 220, 220);
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+.btn-azul {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-azul:hover {
+  background-color: #0056b3;
+}
+
+/* ====== ESTADOS DE LA PETICIÓN (cargando / error) ====== */
+.estado-carga,
+.bloque-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  min-height: 2rem;
+  font-weight: 600;
+}
+
+/* Necesario: display:flex pisa al atributo [hidden] si no lo reforzamos */
+.estado-carga[hidden],
+.bloque-error[hidden] {
+  display: none;
+}
+
+.bloque-error p {
+  color: #ff8a8a;
+  margin: 0;
+}
+
+/* ====== ESTADO DE SINCRONIZACIÓN (localStorage) ====== */
+.estado-sync {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-top: 0.2rem;
+}
+
+.estado-sync-ok {
+  color: #6fd18c;
+}
+
+.estado-sync-error {
+  color: #ff8a8a;
+}
+
+/* ====== NOTIFICACIÓN DIFERIDA (setTimeout) ====== */
+.notificacion-bienvenida {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.notificacion-bienvenida.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.notificacion-bienvenida span {
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.btn-cerrar-notificacion {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 0.2rem;
+}
+
+/* ====== TARJETAS DE PRODUCTO ====== */
+.tarjeta-producto {
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.tarjeta-producto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.tarjeta-producto p {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.tarjeta-producto .stock-producto {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.btn-eliminar {
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #922b21;
+}
+
+.sin-resultados {
+  text-align: center;
+  opacity: 0.7;
+  padding: 1rem;
+}
+
+/* ====== BANNER FOOTER ====== */
+.bannerfooter {
+  /* background: url("../img/banner1.jpg") center / cover no-repeat; */
+  background-color: #1e1e1e;
+  width: 100%;
+  height: 16rem;
+  margin-top: 3rem;
+}

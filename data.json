@@ -1,0 +1,14 @@
+[
+  { "id": 1,  "nombre": "Mouse Inalámbrico Logitech G X Superlight", "precio": 140209, "categoria": "mouse",       "stock": 10 },
+  { "id": 2,  "nombre": "Redragon Pro Wireless/bt M917gb-pros",      "precio": 59999,  "categoria": "mouse",       "stock": 5  },
+  { "id": 3,  "nombre": "Inalambrico Redragon M808-KS Storm Pro",    "precio": 42999,  "categoria": "mouse",       "stock": 8  },
+  { "id": 4,  "nombre": "Mouse Logitech G502",                       "precio": 101698, "categoria": "mouse",       "stock": 15 },
+  { "id": 5,  "nombre": "Teclado Redragon RGB",                      "precio": 89990,  "categoria": "teclado",     "stock": 12 },
+  { "id": 6,  "nombre": "Logitech con cable G",                      "precio": 89990,  "categoria": "teclado",     "stock": 10 },
+  { "id": 7,  "nombre": "Redragon inalámbrico",                      "precio": 110240, "categoria": "auriculares", "stock": 15 },
+  { "id": 8,  "nombre": "HyperX Alloy Core",                         "precio": 81890,  "categoria": "teclado",     "stock": 8  },
+  { "id": 9,  "nombre": "Auricular HyperX Cloud",                    "precio": 203600, "categoria": "auriculares", "stock": 10 },
+  { "id": 10, "nombre": "Inalámbrico Logitech G733 Rgb",             "precio": 105699, "categoria": "auriculares", "stock": 12 },
+  { "id": 11, "nombre": "HyperX Cloud Alpha",                        "precio": 89990,  "categoria": "auriculares", "stock": 15 },
+  { "id": 12, "nombre": "Inalámbrico Redragon H510",                 "precio": 132069, "categoria": "auriculares", "stock": 8  }
+]

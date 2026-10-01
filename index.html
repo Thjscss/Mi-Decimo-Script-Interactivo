@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Blog de Gaming</title>
+  <!--ICONO DE LA PAGINA-->
+  <link rel="icon" href="./img/logo.png" type="image/png">
+
+  <!--Estilos de la pagina-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Estilos de Toastify (LIBRERÍA 1: notificaciones tipo "toast") -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="./css/css.css">
+
+  <!--Estilos de Texto-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Scripts: las librerías van ANTES de main.js. Con "defer" se ejecutan en el orden en que están escritos. -->
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>          <!-- Toastify -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>       <!-- SweetAlert2 (LIBRERÍA 2) -->
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Notificación diferida: aparece sola unos segundos después de entrar (setTimeout) -->
+  <div id="notificacion-bienvenida" class="notificacion-bienvenida" hidden>
+    <span>🎮 Cupón <strong>GAMER10</strong>: 10% off en tu próximo pedido.</span>
+    <button type="button" id="cerrar-notificacion" class="btn-cerrar-notificacion"
+      aria-label="Cerrar notificación">&times;</button>
+  </div>
+
+  <main>
+    <header class="mt-4">
+      <h1 id="titulo-principal">Productos gaming</h1>
+      <h2>Accesorios gamers y RGB</h2>
+    </header>
+
+    <!-- Buscador (filtra las 3 categorías en vivo) -->
+    <section class="container mt-4">
+      <div class="col-auto mx-auto" style="max-width:420px;">
+        <input type="text" id="input-busqueda" class="form-control" placeholder="Buscar producto por nombre...">
+      </div>
+    </section>
+
+    <!-- Estados de la petición: cargando / error / sincronización con localStorage -->
+    <section class="container mt-3">
+      <!-- Se muestra mientras el fetch está pendiente -->
+      <div id="estado-carga" class="estado-carga" role="status" aria-live="polite" hidden>
+        <div class="spinner-border spinner-border-sm" aria-hidden="true"></div>
+        <span>Cargando productos…</span>
+      </div>
+
+      <!-- Se muestra si el fetch falla; permite reintentar sin recargar la página -->
+      <div id="bloque-error" class="bloque-error" role="alert" hidden>
+        <p id="texto-error"></p>
+        <button type="button" id="btn-reintentar" class="btn-azul">Reintentar</button>
+      </div>
+
+      <small id="estado-sync" class="estado-sync"></small>
+    </section>
+
+    <!-- ============ MOUSE ============ -->
+    <section class="container mt-4">
+      <h3>Mouse</h3>
+      <form id="form-agregar-mouse" class="row justify-content-center gy-2">
+        <div class="col-auto">
+          <input type="text" id="input-nombre-mouse" class="form-control" placeholder="Nombre del producto">
+        </div>
+        <div class="col-auto">
+          <input type="number" id="input-precio-mouse" class="form-control" placeholder="Precio">
+        </div>
+        <div class="col-auto">
+          <button type="button" id="btn-agregar-mouse" class="btn-azul">Agregar</button>
+        </div>
+      </form>
+      <!-- Acá va la lista, la llena JS con los datos del fetch -->
+      <div class="row justify-content-around mt-3" id="contenedor-productos-mouse"></div>
+    </section>
+
+    <!-- ============ TECLADO ============ -->
+    <section class="container mt-4">
+      <h3>Teclado</h3>
+      <form id="form-agregar-teclado" class="row justify-content-center gy-2">
+        <div class="col-auto">
+          <input type="text" id="input-nombre-teclado" class="form-control" placeholder="Nombre del producto">
+        </div>
+        <div class="col-auto">
+          <input type="number" id="input-precio-teclado" class="form-control" placeholder="Precio">
+        </div>
+        <div class="col-auto">
+          <button type="button" id="btn-agregar-teclado" class="btn-azul">Agregar</button>
+        </div>
+      </form>
+      <div class="row justify-content-around mt-3" id="contenedor-productos-teclado"></div>
+    </section>
+
+    <!-- ============ AURICULARES ============ -->
+    <section class="container mt-4">
+      <h3>Auriculares</h3>
+      <form id="form-agregar-auriculares" class="row justify-content-center gy-2">
+        <div class="col-auto">
+          <input type="text" id="input-nombre-auriculares" class="form-control" placeholder="Nombre del producto">
+        </div>
+        <div class="col-auto">
+          <input type="number" id="input-precio-auriculares" class="form-control" placeholder="Precio">
+        </div>
+        <div class="col-auto">
+          <button type="button" id="btn-agregar-auriculares" class="btn-azul">Agregar</button>
+        </div>
+      </form>
+      <div class="row justify-content-around mt-3" id="contenedor-productos-auriculares"></div>
+    </section>
+  </main>
+
+</body>
+
+</html>
